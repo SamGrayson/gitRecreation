@@ -368,8 +368,7 @@ p, h1, h2, h3, h4, li, ul, a {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  height: 65px;
-  border-bottom: 1px solid rgba(48, 48, 48, 0.1); }
+  height: 65px; }
 
 .search {
   height: 65px;
@@ -425,18 +424,62 @@ p, h1, h2, h3, h4, li, ul, a {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
-  height: 600px; }
+  flex-direction: column; }
+
+.commentWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 150px;
+  border-top: 1px solid rgba(48, 48, 48, 0.1); }
 
 .repoComments {
   width: 100%;
-  height: 600px; }
+  border-top: 1px solid rgba(48, 48, 48, 0.1); }
 
 .leftComments {
   float: left;
   display: inline-block;
-  height: 150px;
+  width: 80%; }
+  .leftComments h2 {
+    margin: 8px;
+    color: #4078c0; }
+  .leftComments h3 {
+    font-size: .8em;
+    margin: 5px;
+    color: rgba(48, 48, 48, 0.6); }
+  .leftComments #timeUpdated {
+    color: rgba(48, 48, 48, 0.4); }
+
+.rightComments {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%; }
+  .rightComments h4 {
+    margin-right: 20px;
+    font-size: .8em;
+    color: rgba(48, 48, 48, 0.6); }
+  .rightComments span {
+    font-size: .8em;
+    color: rgba(48, 48, 48, 0.6);
+    margin-right: 5px; }
+
+.publicActivity {
   width: 100%;
-  border-top: 1px solid rgba(48, 48, 48, 0.1); }
+  height: 600px;
+  border-top: 1px solid rgba(48, 48, 48, 0.1);
+  background-color: black; }
+
+.posts {
+  height: 100px;
+  background-color: white;
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
