@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gitHub REMIX</title>
+  <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400italic,300,700,400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="pageWrap">
+
+  <!-- Nav Top -->
+    <div class="navTopWrap">
+      <div class="left">
+        <span class="mega-octicon octicon-mark-github"></span>
+        <input type="text" placeholder="search"></input>
+        <a href=""><li class="navButton" id="explore">Explore</li></a>
+        <a href=""><li class="navButton" id="gist">Gist</li></a>
+        <a href=""><li class="navButton" id="blog">Blog</li></a>
+        <a href=""><li class="navButton" id="help">Help</li></a>
+      </div>
+      <div class="right">
+        <script type='text/template' id="navPicture">
+          <a href=""><img src="<%= avatar_url %>" alt="" /></a>
+          <a href="" id="profLink"><%= name %></a>
+          <span class="octicon octicon-plus" id="plus"></span>
+          <span class="octicon octicon-triangle-down" id="arrowDown"></span>
+          <span class="octicon octicon-inbox"></span>
+          <span class="octicon octicon-gear"></span>
+          <span class="octicon octicon-sign-out"></span>
+        </script>
+      </div>
+    </div>
+
+  <!-- SideBar -->
+
+    <div class="bottomWrapper">
+      <div class="sideColumn">
+        <div class="profileWrapper">
+          <div class="profileImg">
+          <script type='text/template' id="profilePicture">
+            <a class="profPic" href=""><img src="<%= avatar_url %>" alt="" /></a>
+            <h1><%= name %></h1>
+            <h2><%= login %></h2>
+          </script>
+          </div>
+        </div>
+        <div class="contactWrapper">
+          <script type="text/html" id="contact">
+            <div><span class="octicon octicon-mail"></span><a href=""><%= email %></a></div>
+            <div><span class="octicon octicon-clock"></span><a href="" id="time"><%= created_at %></a></div>
+          </script>
+        </div>
+        <div class="followersWrapper">
+          <script type='text/template' id="following">
+            <div class="boxes followers">
+              <h1><%=followers%></h1>
+              <a href="">Followers</a>
+            </div>
+            <div class="boxes starred">
+              <h1>0</h1>
+              <a href="">Starred</a>
+            </div>
+            <div class="boxes following">
+              <h1><%=following%></h1>
+              <a href="">Following</a>
+            </div>
+          </script>
+        </div>
+        <div class="organizationsWrapper">
+          <div class="organizations">
+            <script type="text/template" id="organization">
+              <h2>Organizations</h2>
+              <div class="groupWrapper">
+                <a href=""><img src="<%= avatar_url%>" alt="<%= login %>" /></a>
+              </div>
+            </script>
+          </div>
+        </div>
+      </div>
+
+
+  <!-- ContentFeed -->
+
+    <div class="contentWrapper">
+      <div class="topNavWrapper">
+        <div class="nav">
+          <div class="topButton" id="contributions">
+            <span class="octicon octicon-diff-added"></span>
+            <li>Contributions</li>
+          </div>
+          <div class="topButton" id="repos">
+            <span class="octicon octicon-repo"></span>
+            <li>Repositories</li>
+          </div>
+          <div class="topButton" id="publicActivity">
+            <span class="octicon octicon-rss"></span>
+            <li>Public activity</li>
+          </div>
+          <div class="edit">
+            <button><span class="octicon octicon-pencil"></span><span id="editFont">Edit Profile</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="repoSearch">
+        <div class="search">
+          <input type="text" placeholder="Find a repository..."></input><button>Search</button>
+        </div>
+        <div class="links">
+          <li>All</li>
+          <li>Public</li>
+          <li>Private</li>
+          <li>Sources</li>
+          <li>Forks</li>
+          <li>Mirrors</li>
+        </div>
+      </div>
+      <div class="contentBottomWrap">
+        <div class="content">
+            <div class="repoComments">
+            <script type="text/template" id="repoCommentsScript">
+              <div class="leftComments">
+                <h2><%=name %><h2>
+                <h3><%=description %><h3>
+                <h3><%=updated_at %><h3>
+              </div>
+            </script>
+              <right>
+              </right>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+<!-- JAVA SCRIPT LINKS -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
