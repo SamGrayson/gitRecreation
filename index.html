@@ -118,7 +118,7 @@
       </div>
       <div class="contentBottomWrap">
         <div class="content">
-            <div class="repoComments active">
+            <div class="repoComments">
             <script type="text/template" id="repoCommentsScript">
               <div class="commentWrapper">
                 <div class="leftComments">
@@ -127,22 +127,36 @@
                   <h3 id="timeUpdated"><%=updated_at %><h3>
                 </div>
                 <div class="rightComments">
-                  <h4><%=language %></h4><span class="octicon octicon-star"></span><h4><%= stargazers_count %></h4><span class="octicon octicon-git-branch"></span><h4><%=forks_count%>
+                  <h4><%=language %></h4>
+                  <span class="octicon octicon-star"></span>
+                  <h4><%= stargazers_count %></h4>
+                  <span class="octicon octicon-git-branch"></span>
+                  <h4><%=forks_count%></h4>
                 </div>
             </div>
             </script>
               <right>
               </right>
             </div>
-<!--             <div class="publicActivity active">
-        <script type="text/template" id="repoCommentsScript">
-    <div class="commentWrapped">
-      <div class="posts">
-        <a href=""><%=login =></a><p>created <%= =><p>
-      </div>
-    </div>
-  </script>
-</div> -->
+            <div class="publicActivity displayed">
+                <div class="commentWrapped">
+                  <script type="text/template" id="repoActiveScript">
+                    <% if ( type === 'CreateEvent') { %>
+                    <div class="posts">
+                      <a href=""><%=actor.login %></a>
+                      <p>created branch <span><%=payload.master_branch%></span> at </p>
+                      <a href=""><%=repo.name%></a>
+                    </div>
+                    <div class="posts">
+
+                      <a href=""><%=actor.login %></a>
+                      <p>created repository</p>
+                      <a href=""><%=repo.name%></a>
+                    </div>
+                    <% } %>
+                  </script>
+                </div>
+            </div>
         </div>
       </div>
     </div>
